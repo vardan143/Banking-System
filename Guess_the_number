@@ -1,0 +1,39 @@
+import random
+def create(n):
+    return str(random.randint(10**(n-1),(10**n)))
+while True:
+    choice=int(input("enter your choice -1 to stop or 1 to play:"))
+    if choice==-1:
+        break
+    else:
+        r=create(int(input('''enter the size of the number
+        Enter 2 for easy
+        enter 3 for medium
+        enter 4 or above for hard:''')))
+        while True:
+            cows,bulls=0,0
+            guess=input("enter your number: or -1 to show the number")
+            if guess=='-1':
+                print(r)
+                break
+            elif  guess != r:
+                for i in guess:
+                    if i in r:
+                        if guess.index(i)==r.index(i):
+                            cows+=1
+                            
+                        else:
+                            bulls+=1
+                    else:
+                        continue
+                print("cows= %d:"%(cows))
+                print("bulls= %d"%(bulls))
+            else:
+                print("Congrats............you got it right")
+                print("number is %d"%int((r)))
+                break
+        
+            
+        
+
+    
